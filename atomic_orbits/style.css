@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 400px;
+    width: 400px;
+    /* background: yellow; */
+}
+
+.center span {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.center span::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top:50%;
+    left:-10px;
+}
+
+.center span:nth-child(1)::before {
+    background: rgba(134, 255, 0, 1);
+    box-shadow: 0 0 20px rgba(134, 255, 0, 1),
+    0 0 40px rgba(134, 255, 0, 1),
+    0 0 60px rgba(134, 255, 0, 1),
+    0 0 80px rgba(134, 255, 0, 1);
+}
+.center span:nth-child(2)::before {
+    background: rgb(255, 81, 0);
+    box-shadow: 0 0 20px rgb(255, 81, 0),
+    0 0 40px rgb(255, 81, 0),
+    0 0 60px rgb(255, 81, 0),
+    0 0 80px rgb(255, 81, 0);
+}
+.center span:nth-child(3)::before {
+    background: rgb(255, 251, 0);
+    box-shadow: 0 0 20px rgb(255, 251, 0),
+    0 0 40px rgb(255, 251, 0),
+    0 0 60px rgb(255, 251, 0),
+    0 0 80px rgb(255, 251, 0);
+}
+
+
+
+.center span:nth-child(1) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* border: 2px solid rgb(73, 70, 70); */
+    animation: animate 5s linear infinite;
+}
+.center span:nth-child(2) {
+    top: 60px;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+    /* border: 2px solid rgb(73, 70, 70); */
+    animation: animate-rev 5s linear infinite;
+}
+.center span:nth-child(3) {
+    top: 120px;
+    left: 120px;
+    right: 120px;
+    bottom: 120px;
+    /* border: 2px solid rgb(73, 70, 70); */
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate-rev {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
